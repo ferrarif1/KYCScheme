@@ -638,9 +638,9 @@
     //delete the coins[2]
     console.log("start test delete Item ################")
     console.log("delete before = " + accumulator)
-    //addrNotIn was originally not in the accumulator
+    //addrNotIn was not in the accumulator
     var newAccmulatorWrong = RSAaccumulator.deleteItemFromAccumulator(accumulator,addrNotIn, proof2)
-    //coins[2] was originally in the accumulator
+    //coins[2] was in the accumulator
     var newAccmulatorRight = RSAaccumulator.deleteItemFromAccumulator(accumulator,coins[2],proof1)
     console.log("delete after = " + newAccmulatorRight)
     //After delete，newAccmulatorRight did not have coins[2]

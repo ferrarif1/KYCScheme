@@ -9,7 +9,7 @@ interface KYCNFTInterface {
 }
 
 /*
-n, accumulator is bigNumber，(may beyond uint256)，so use string as the value type
+n, accumulator is bigNumber，(May be out of range of uint256)，so use string as the value type
 */
 contract KYCManager is Ownable {
     struct UserData{
