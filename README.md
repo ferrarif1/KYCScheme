@@ -1,5 +1,5 @@
 # KYCScheme
- Journal: PeerJ Computer Science
+  For the paper review of Journal: PeerJ Computer Science
  
 # The code includes two parts: smart contract and RSA accumulator
 
