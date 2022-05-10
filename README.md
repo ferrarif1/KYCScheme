@@ -3,20 +3,20 @@
  
 # The code includes two parts: smart contract and RSA accumulator
 
- ### The smart contract section includes:
+ ## The smart contract section includes:
  [KYCNFT.sol](https://github.com/ferrarif1/KYCScheme/blob/main/KYCNFT-LocalSever/contracts/KYCNFT.sol "Heading link")  
  [KYCManager.sol](https://github.com/ferrarif1/KYCScheme/blob/main/KYCNFT-LocalSever/contracts/KYCManager.sol "Heading link")
  
- ### The RSA accumulator part is here: 
+ ## The RSA accumulator part is here: 
  [RSA accumulator](https://github.com/ferrarif1/KYCScheme/blob/main/KYCNFT-LocalSever/index.html "Heading link")
  
- ### How to use?
-  1.Start the Apache server that comes with your Mac.  
-      Run Apache $ sudo apachectl start.  
-      Quit Apache $ sudo apachectl stop.  
-      Put the project folder in the following location /Library/WebServer/Documents.  
-  2.Open the browser console.  
-  3.To access it in your browser: type the address http://localhost/KYCScheme/blob/main/KYCNFT-LocalSever/index.html into the address bar and enter.  
+ ## How to use?
+ ### 1.Start the Apache server that comes with your Mac.  
+    Run Apache $ sudo apachectl start.  
+    Quit Apache $ sudo apachectl stop.  
+    Put the project folder in the following location /Library/WebServer/Documents.  
+ ### 2.Open the browser console.  
+ ### 3.To access it in your browser: type the address http://localhost/KYCScheme/blob/main/KYCNFT-LocalSever/index.html into the address bar and enter.  
   ### Example:
   <div align=center><img src="https://github.com/ferrarif1/KYCScheme/blob/main/KYCNFT-LocalSever/src/pictures/example.png" width="780px"></div>  
     
