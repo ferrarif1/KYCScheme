@@ -8,9 +8,6 @@ var testAddr = obj.array;
 
 const lengthChoose = 16;
 
-describe("KYC contract", function () {
-  console.log(testAddr[0]);
-});
 
 /********************************************************    Accumulator      **************************************************************************************/
 /*
