@@ -3,9 +3,12 @@
  
 # The code includes two parts: smart contract and RSA accumulator
 
- ## The smart contract section includes:
- [KYCNFT.sol](https://github.com/ferrarif1/KYCScheme/blob/main/KYCSchemeForAllBlockchains/contracts/KYCNFT.sol "Heading link")  
- [KYCManager.sol](https://github.com/ferrarif1/KYCScheme/blob/main/KYCSchemeForAllBlockchains/contracts/KYCManager.sol "Heading link")
+ ## The smart contracts:
+ [KYCNFT.sol](https://github.com/ferrarif1/KYCScheme/blob/main/KYCSchemeForAllBlockchains/contracts/KYCNFT.sol "Heading link")    
+ [KYCManager.sol](https://github.com/ferrarif1/KYCScheme/blob/main/KYCSchemeForAllBlockchains/contracts/KYCManager.sol "Heading link")  
+ ### Rinkeby testnet address:       
+    KYCNFT：0xb81e0412554e43b47f7De63d66ED4937fC20983c  
+    KYCManager：0x13eaEC178cEa0D3746A64fb800Dbf41A438d046c  
  
  ## The RSA accumulator part is here: 
  [RSA accumulator](https://github.com/ferrarif1/KYCScheme/blob/main/KYCSchemeForAllBlockchains/test/Token.js "Heading link")
