@@ -6,6 +6,8 @@ const { BigNumber } = require("../src/js/bignumber.js");
 
 var testAddr = obj.array;
 
+const lengthChoose = 16;
+
 describe("KYC contract", function () {
   console.log(testAddr[0]);
 });
@@ -227,7 +229,7 @@ function hashToPrime(address) {
   //lengthChoose is the param 'l' in the article
   //lengthChoose = 17 (including 0x)
 
-  const lengthChoose = 15
+  
   var addrToHash = ethers.utils.keccak256(ethers.utils.toUtf8Bytes(address));
   //console.log("1st : " + addrToHash)
   var addrBN = BigNumber(addrToHash.substring(0, lengthChoose))
