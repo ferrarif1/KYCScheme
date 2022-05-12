@@ -102,10 +102,13 @@ class RSAaccumulator {
 
   /*
   another way to get proof  
-  ****** It won't work if the element is too big*******
+  ****** It won't work if the element is too big *******
   h = g^v, z = h^x, B = hash(h+z)
   b = h^(floor(x/B)), r = x mod B
   check: b^B * h^r = h^(B*floor(x/B) + (x modB)) = h^x = z
+  from this article:
+  Wesolowski, B. (2019). Efficient verifiable delay functions. In Annual International Conference on the437
+  Theory and Applications of Cryptographic Techniques, pages 379–407. Springer
   */
   static getProof2(setValues, value, generator) {
     let h = BigNumber(generator).pow(value)
@@ -200,8 +203,6 @@ function extendedGcd(x, y) {
     const a = BigNumber(0)
     const b = BigNumber(1)
     const gcd = y
-    //console.log("x = " + x + " a = " + a.toNumber() + " b = " + b.toNumber()  + " gcd = " + gcd.toNumber())
-    //console.log("x = " + x + " ax + by = " + (a.times(x).plus(b.times(y))).toNumber())
     return [BigNumber(a), BigNumber(b), BigNumber(gcd)]
   }
   const [a1, b1, g1] = extendedGcd(y.mod(x), x)
@@ -210,13 +211,9 @@ function extendedGcd(x, y) {
   const m2 = y.minus(m1)
   const ydx = BigNumber(m2.div(x))
   //const ydx = Math.floor(BigNumber(y.div(x)))
-  //console.log("y.div(x) = " + y.div(x) + " ydx = " + ydx)
   const a = b1.minus(BigNumber(ydx).times(a1))
   const b = a1
   const gcd = g1
-  //console.log("a = " + a.toNumber() + " b = " + b.toNumber()  + " gcd = " + gcd.toNumber())
-  //console.log("2 x = " + x + " y = " + y)
-  //console.log("ax + by = " + (a.times(x).plus(b.times(y))).toNumber())
   return [BigNumber(a), BigNumber(b), BigNumber(gcd)]
 }
 
@@ -228,7 +225,6 @@ function extendedGcd(x, y) {
 function hashToPrime(address) {
   //lengthChoose is the param 'l' in the article
   //lengthChoose = 17 (including 0x)
-
   
   var addrToHash = ethers.utils.keccak256(ethers.utils.toUtf8Bytes(address));
   //console.log("1st : " + addrToHash)
