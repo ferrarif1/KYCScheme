@@ -313,6 +313,55 @@ function getTime() {
   var now = Date.now();
   return now
 }
+/******************************* test time  **********************************************/
+/*
+Using the computer test with cpu i7, 6700k, and 16G memory configuration, its computing power is about 1.8GH/s=10^9H/s. 
+
+If the parameter l is selected as 15, the number of calculations required is 16^13=4.5*10^15 times, and the time required for SHA3 takes 10^6 seconds. 
+
+When l=16, the required number of calculations is 16^14=7.2*10^16 times , the time used on SHA3 is about 4*10^7 seconds. 
+
+When l=17 is selected, the number of calculations required is 16^15=1.2*10^18 times, and the time used on SHA3 is about 10^9 seconds. 
+
+According to the test, the time used for the prime number judgment test in each operation process is about 5-7 times the time used for SHA3:
+
+Test result of 100000 times:
+SHA3 time = 17463 ms
+probablyPrime time = 101254 ms
+
+*/
+
+function timeTest(times){
+  // SHA3 time
+  var t1 = times;
+  var t2 = times;
+  var start1 = getTime()
+  while(t1>0){
+    t1--;
+    ethers.utils.keccak256(ethers.utils.toUtf8Bytes(testAddr[t1%80]));
+  }
+  var end1 = getTime()
+ 
+
+   // probablyPrime time
+  var start2 = getTime()
+  while(t2>0){
+    t2--;
+    var addrToHash = ethers.utils.keccak256(ethers.utils.toUtf8Bytes(testAddr[t2%80]));
+    var addrBN = BigNumber(addrToHash.substring(0, lengthChoose))
+    var isprime = probablyPrime(addrBN, 7)
+  }
+  var end2 = getTime()
+  var time1 = end1-start1
+  var time2 = end2-start2-time1
+  console.log("SHA3 time = " + time1 + " ms")
+  console.log("probablyPrime time = " + time2 + " ms")
+
+}
+
+
+timeTest(100000);
+
 
 /******************************* Test Accumulator  **********************************************/
 var totalLoopTimes = 0
