@@ -315,19 +315,20 @@ function getTime() {
 }
 /******************************* test time  **********************************************/
 /*
-Using the computer test with cpu i7, 6700k, and 16G memory configuration, its computing power is about 1.8GH/s=10^9H/s. 
+The computer configuration used for this experiment is :
+[mac OS , 8-core Intel Core i9 2.3 GHz]
 
-If the parameter l is selected as 15, the number of calculations required is 16^13=4.5*10^15 times, and the time required for SHA3 takes 10^6 seconds. 
+According to the test, about 5700 Keccak operations with an input size of 32 Byte can be performed per second.
+The time spent on each operation is about 6 times longer than the time spent on Keccak.
 
-When l=16, the required number of calculations is 16^14=7.2*10^16 times , the time used on SHA3 is about 4*10^7 seconds. 
-
-When l=17 is selected, the number of calculations required is 16^15=1.2*10^18 times, and the time used on SHA3 is about 10^9 seconds. 
-
-According to the test, the time used for the prime number judgment test in each operation process is about 5-7 times the time used for SHA3:
-
-Test result of 100000 times:
+The result of 100000 operations:
 SHA3 time = 17463 ms
 probablyPrime time = 101254 ms
+
+If the parameter l is selected as 15, the number of calculations needed is 16^13 = 4.5*10^15, and the total time needed is about seconds about 158548 years. 
+If l=17, the number of calculations required is 16^15=1.15*10^18.
+
+From this point of view, the choice of parameter l = 17 is sufficient to ensure security.
 
 */
 
@@ -358,7 +359,6 @@ function timeTest(times){
   console.log("probablyPrime time = " + time2 + " ms")
 
 }
-
 
 timeTest(100000);
 
